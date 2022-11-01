@@ -1,12 +1,19 @@
 import App from './App.vue'
-
-const counterSelector = '[data-testid=counter]'
+import { routes } from './router'
 
 describe('<App />', () => {
-  it('renders', () => {
-    cy.viewport(800, 600)
+  it('renders all routes', () => {
     cy.mount(App)
-    cy.findByText('Demo').click()
-    cy.get(counterSelector).should('be.visible')
+      .get('body')
+      .contains('a')
+      .each(($el, idx) => {
+        cy.wrap($el)
+          .should('have.attr', routes[idx])
+      })
+      .get('body')
+      .findByText('Demo').should('be.visible')
+      .click()
+      .get('body')
+      .findByText('The Demo Page').should('be.visible')
   })
 })
