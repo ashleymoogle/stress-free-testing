@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker'
 
-export const products = Array.from(Array(120).keys()).map(() => {
+
+export const products = Array.from(Array(25).keys()).map(() => {
   const productName = faker.commerce.productName()
   const bids = faker.datatype.number({ min: 1, max: 2000 })
   const watchers = faker.datatype.number({ min: 128, max: 6400 })
@@ -17,5 +18,7 @@ export const products = Array.from(Array(120).keys()).map(() => {
     additional: `${bids} bids, ${watchers} watchers`,
     rating: faker.datatype.float({ min: 2, max: 5, precision: 0.01 }),
     price: faker.finance.amount(42, 256, 2, '$'),
-  }
+  } as const
 })
+
+export type TestProduct = typeof products[number]

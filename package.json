@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@headlessui/vue": "1.6.4",
+    "@vueuse/core": "^9.4.0",
     "pinia": "2.0.14",
     "vue": "3.2.37",
     "vue-router": "4.0.15",
     "vue-star-rating": "next"
   },
   "devDependencies": {
+    "@faker-js/faker": "7.2.0",
     "@iconify/json": "2.1.57",
     "@testing-library/cypress": "8.0.3",
     "@vitejs/plugin-vue": "2.3.3",
@@ -25,7 +27,6 @@
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-vue": "9.1.0",
-    "@faker-js/faker": "7.2.0",
     "prettier": "2.6.2",
     "sass": "1.52.2",
     "unplugin-icons": "0.14.3",

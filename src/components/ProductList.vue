@@ -9,6 +9,7 @@ defineProps({
   <section class="grid items-center justify-center">
     <div class="h-full" v-for="product in products" :key="product.id">
       <ProductCard
+        data-testid="product"
         :img="product.img"
         :description="product.description"
         :additional="product.additional"
