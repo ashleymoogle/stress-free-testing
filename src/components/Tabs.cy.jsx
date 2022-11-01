@@ -16,21 +16,14 @@ const items = [
   },
 ]
 
-describe('<Tabs />', () => {
-  it.only('renders the items using object syntax', () => {
-    cy.viewport(400, 200)
-    const onSelectSpy = cy.spy().as('selectSpy')
-    cy.mount(Tabs, {
-      props: {
-        onSelect: onSelectSpy,
-        items
-      }
-    })
-  })
+let onSelectSpy
 
-  it('renders the items', () => {
-    cy.viewport(400, 200)
-    const onSelectSpy = cy.spy().as('selectSpy')
+beforeEach(() => {
+  onSelectSpy = cy.spy().as('selectSpy')
+})
+
+describe('<Tabs />', () => {
+  it('focuses the item that was clicked on', () => {
     cy.mount(() => (
       <div class="m-8">
         <Tabs onSelect={onSelectSpy} items={items} />
@@ -43,6 +36,19 @@ describe('<Tabs />', () => {
     // 3. Keybindings are working as expected
 
     cy.findByText(items[1].text).click().should('have.focus')
-    cy.get('@selectSpy').should('have.been.calledWith', items[1])
+  })
+
+  it('renders all the items passed in', () => {
+    cy.mount(() => (<Tabs items={items} />))
+      .wrap(items)
+      .each((item) => {
+        cy.get('body').findByText(item.text).should('be.visible')
+      })
+  })
+
+  it('emits a select event when an item is clicked', () => {
+    cy.mount(() => (<Tabs onSelect={onSelectSpy} items={items} />))
+      .get('body').findByText(items[items.length - 1].text).click()
+      .get('@selectSpy').should('have.been.calledWith', items[items.length - 1])
   })
 })

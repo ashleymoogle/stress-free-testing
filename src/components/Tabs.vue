@@ -17,7 +17,7 @@ const select = (item) => {
 
 <template>
   <div
-    class="grid items-center justify-center grid-flow-col text-center text-gray-600 rounded w-min"
+    class="m-1 grid items-center justify-center grid-flow-col text-center text-gray-600 rounded w-min"
   >
     <div
       tabindex="1"
@@ -35,7 +35,7 @@ const select = (item) => {
 </template>
 
 <style lang="scss" scoped>
-// .tabs {
-//   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-// }
+.tabs {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
 </style>
