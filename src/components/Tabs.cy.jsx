@@ -32,7 +32,7 @@ describe('<Tabs />', () => {
     // 2. The focus state is set (See `have.focus` assertion)
     // 3. Keybindings are working as expected
 
-    debugger
+    // debugger
 
     cy.findByText(items[1].text).click().should('have.focus')
     cy.get('@selectSpy').should('have.been.calledWith', items[1])

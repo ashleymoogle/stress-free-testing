@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "cypress/globals" : true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:cypress/recommended",
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "prettier"
+  ],
+  "plugins": ["vue"]
+}
