@@ -17,6 +17,7 @@
     "vue-star-rating": "next"
   },
   "devDependencies": {
+    "@faker-js/faker": "7.2.0",
     "@iconify/json": "2.1.57",
     "@testing-library/cypress": "8.0.3",
     "@vitejs/plugin-vue": "2.3.3",
@@ -25,7 +26,6 @@
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-vue": "9.1.0",
-    "@faker-js/faker": "7.2.0",
     "prettier": "2.6.2",
     "sass": "1.52.2",
     "unplugin-icons": "0.14.3",
